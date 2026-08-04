@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f6f2" />
+    <title>GenOffice 카드 뉴스</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="masthead">
+        <p class="edition">AI PRODUCT NOTE</p>
+        <h1>GenOffice 카드 뉴스</h1>
+        <p class="date">2026.08.04</p>
+      </header>
+
+      <section class="carousel" aria-label="GenOffice 카드 10장">
+        <p class="sr-only" id="instructions">좌우로 밀거나 방향키·스페이스키·Home·End 키로 카드를 이동할 수 있습니다.</p>
+        <button class="nav-button previous" type="button" aria-label="이전 GenOffice 카드">
+          <span aria-hidden="true">‹</span>
+        </button>
+        <div class="track" role="group" aria-roledescription="캐러셀" aria-describedby="instructions" tabindex="0"></div>
+        <button class="nav-button next" type="button" aria-label="다음 GenOffice 카드">
+          <span aria-hidden="true">›</span>
+        </button>
+        <footer class="footer">
+          <p class="position" aria-live="polite" aria-atomic="true">1 / 10</p>
+          <div class="pagination" aria-label="GenOffice 카드 바로 가기"></div>
+          <p class="hint">밀기 · 방향키 · Space</p>
+        </footer>
+      </section>
+    </main>
+    <script src="app.js" defer></script>
+  </body>
+</html>
