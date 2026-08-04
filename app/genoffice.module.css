@@ -1,0 +1,267 @@
+.pageShell {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px clamp(12px, 3vw, 32px);
+}
+
+.masthead {
+  width: min(100%, 760px);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  column-gap: 16px;
+}
+
+.masthead h1,
+.masthead p,
+.footer p {
+  margin: 0;
+}
+
+.edition {
+  grid-column: 1 / -1;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.masthead h1 {
+  font-size: clamp(20px, 2.2vw, 24px);
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+}
+
+.date,
+.position,
+.hint {
+  color: var(--muted);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.carousel {
+  --card-width: min(calc(100vw - 120px), calc((100svh - 126px) * 0.8), 760px);
+  width: min(100%, calc(var(--card-width) + 128px));
+  display: grid;
+  grid-template-columns: 46px minmax(0, var(--card-width)) 46px;
+  align-items: center;
+  gap: clamp(10px, 2vw, 18px);
+}
+
+.instructions {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.track {
+  min-width: 0;
+  display: flex;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  touch-action: pan-x pan-y;
+  outline: none;
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+.track:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 4px;
+}
+
+.slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  margin: 0;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.navButton {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--ink);
+  background: transparent;
+  cursor: pointer;
+  transition:
+    background-color 160ms var(--ease-out),
+    border-color 160ms var(--ease-out),
+    transform 160ms var(--ease-out);
+}
+
+.navButton svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.navButton:hover:not(:disabled) {
+  background: var(--paper);
+}
+
+.navButton:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+.navButton:focus-visible,
+.pageDot:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.navButton:disabled {
+  opacity: 0.28;
+  cursor: default;
+}
+
+.footer {
+  grid-column: 1 / -1;
+  width: min(100%, 760px);
+  min-height: 28px;
+  display: grid;
+  grid-template-columns: minmax(48px, 1fr) auto minmax(96px, 1fr);
+  align-items: center;
+  gap: 12px;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pageDot {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.pageDot::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  inset: 50% auto auto 50%;
+  border-radius: 50%;
+  background: var(--line);
+  transform: translate(-50%, -50%);
+  transition:
+    width 160ms var(--ease-out),
+    background-color 160ms var(--ease-out);
+}
+
+.pageDot[aria-current="true"]::before {
+  width: 14px;
+  border-radius: 999px;
+  background: var(--ink);
+}
+
+.hint {
+  text-align: right;
+}
+
+@media (max-width: 700px) {
+  .pageShell {
+    justify-content: flex-start;
+    gap: 10px;
+    padding-inline: 12px;
+  }
+
+  .carousel {
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 12px;
+  }
+
+  .track {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .navButton {
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+  }
+
+  .navButton:first-of-type {
+    justify-self: end;
+  }
+
+  .navButton:last-of-type {
+    justify-self: start;
+  }
+
+  .footer {
+    grid-column: 1 / -1;
+    grid-template-columns: 1fr auto;
+  }
+
+  .pagination {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .position {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .hint {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}
+
+@media (max-height: 680px) and (min-width: 701px) {
+  .pageShell {
+    justify-content: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    scroll-behavior: auto;
+  }
+
+  .navButton,
+  .pageDot::before {
+    transition: none;
+  }
+}
