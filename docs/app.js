@@ -1,5 +1,5 @@
 const cards = [
-  ["GenOffice 데스크톱 오피스 공개와 Apache-2.0 핵심 코드, ee 폴더의 별도 라이선스"],
+  ["Genspark가 공개한 GenOffice 데스크톱 오피스와 Apache-2.0 핵심 코드, ee 폴더의 별도 라이선스"],
   ["GenOffice Docs의 DOCX 편집과 문단 단위 저장 방식"],
   ["GenOffice Sheets의 XLSX 편집과 데이터 분석 기능"],
   ["GenOffice Slides의 PPTX 편집과 PDF·이미지 출력 기능"],

@@ -7,7 +7,7 @@ import styles from "./genoffice.module.css";
 const CARDS = [
   {
     src: "/genoffice/genoffice-card-01-of-10.webp",
-    alt: "GenOffice 데스크톱 오피스 공개와 Apache-2.0 핵심 코드, ee 폴더의 별도 라이선스",
+    alt: "Genspark가 공개한 GenOffice 데스크톱 오피스와 Apache-2.0 핵심 코드, ee 폴더의 별도 라이선스",
   },
   {
     src: "/genoffice/genoffice-card-02-of-10.webp",
