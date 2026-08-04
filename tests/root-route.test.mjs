@@ -31,20 +31,23 @@ test("renders the GenOffice carousel at the root route", async () => {
 
   const html = await response.text();
   assert.match(html, /GenOffice 카드 뉴스/);
-  assert.match(html, /genoffice-card-01-of-08\.webp/);
-  assert.match(html, /genoffice-card-08-of-08\.webp/);
+  assert.match(html, /genoffice-card-01-of-10\.webp/);
+  assert.match(html, /genoffice-card-10-of-10\.webp/);
   assert.match(html, /방향키·스페이스키·Home·End 키로 카드를 이동/);
   assert.match(html, /이전 GenOffice 카드/);
   assert.match(html, /다음 GenOffice 카드/);
-  assert.match(html, /MS Office 형식 호환 범위와 제한/);
+  assert.match(html, /Apache-2.0 핵심 코드/);
+  assert.match(html, /본문 텍스트 직접 편집 불가/);
+  assert.match(html, /공통 AI 패널/);
+  assert.match(html, /GenOffice 카드 10장/);
 });
 
-test("packages all eight GenOffice web card images", async () => {
-  const imageAccessChecks = Array.from({ length: 8 }, (_, index) => {
+test("packages all ten GenOffice web card images", async () => {
+  const imageAccessChecks = Array.from({ length: 10 }, (_, index) => {
     const cardNumber = String(index + 1).padStart(2, "0");
     return access(
       new URL(
-        `public/genoffice/genoffice-card-${cardNumber}-of-08.webp`,
+        `public/genoffice/genoffice-card-${cardNumber}-of-10.webp`,
         templateRoot,
       ),
     );

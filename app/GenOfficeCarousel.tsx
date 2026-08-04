@@ -6,36 +6,44 @@ import styles from "./genoffice.module.css";
 
 const CARDS = [
   {
-    src: "/genoffice/genoffice-card-01-of-08.webp",
-    alt: "GenOffice 개요: 문서부터 PDF까지 한 앱에서 제공하는 Alpha 데스크톱 AI 오피스",
+    src: "/genoffice/genoffice-card-01-of-10.webp",
+    alt: "GenOffice 데스크톱 오피스 공개와 Apache-2.0 핵심 코드, ee 폴더의 별도 라이선스",
   },
   {
-    src: "/genoffice/genoffice-card-02-of-08.webp",
+    src: "/genoffice/genoffice-card-02-of-10.webp",
     alt: "GenOffice Docs의 DOCX 편집과 문단 단위 저장 방식",
   },
   {
-    src: "/genoffice/genoffice-card-03-of-08.webp",
+    src: "/genoffice/genoffice-card-03-of-10.webp",
     alt: "GenOffice Sheets의 XLSX 편집과 데이터 분석 기능",
   },
   {
-    src: "/genoffice/genoffice-card-04-of-08.webp",
+    src: "/genoffice/genoffice-card-04-of-10.webp",
     alt: "GenOffice Slides의 PPTX 편집과 PDF·이미지 출력 기능",
   },
   {
-    src: "/genoffice/genoffice-card-05-of-08.webp",
-    alt: "GenOffice PDF의 주석·양식·페이지 편집 기능",
+    src: "/genoffice/genoffice-card-05-of-10.webp",
+    alt: "GenOffice PDF의 주석·양식·페이지 작업과 본문 텍스트 직접 편집 불가",
   },
   {
-    src: "/genoffice/genoffice-card-06-of-08.webp",
-    alt: "GenOffice Super Agent가 편집기에서 문서를 직접 고치는 방식",
+    src: "/genoffice/genoffice-card-06-of-10.webp",
+    alt: "현재 파일 상태에서 공통 AI 패널과 편집기별 도구를 거쳐 파일에 반영하는 흐름",
   },
   {
-    src: "/genoffice/genoffice-card-07-of-08.webp",
-    alt: "GenOffice의 MS Office 형식 호환 범위와 제한",
+    src: "/genoffice/genoffice-card-07-of-10.webp",
+    alt: "GenOffice AI와 Genspark Plus·Pro 공용 크레딧 가격, 전용 가격 미공개",
   },
   {
-    src: "/genoffice/genoffice-card-08-of-08.webp",
-    alt: "GenOffice Alpha에서 라이선스·설치 환경·원격 AI 정책을 확인할 점",
+    src: "/genoffice/genoffice-card-08-of-10.webp",
+    alt: "GenOffice의 MS Office 파일 호환 범위와 제한",
+  },
+  {
+    src: "/genoffice/genoffice-card-09-of-10.webp",
+    alt: "Apache 2.0 핵심 코드와 현재 README·LICENSE만 있는 ee 폴더의 별도 계약 조건",
+  },
+  {
+    src: "/genoffice/genoffice-card-10-of-10.webp",
+    alt: "GenOffice Alpha를 실무에서 사용하기 전 확인할 항목",
   },
 ] as const;
 
@@ -108,7 +116,7 @@ export function GenOfficeCarousel() {
   }, [currentIndex, moveToCard]);
 
   return (
-    <section className={styles.carousel} aria-label="GenOffice 카드 8장">
+    <section className={styles.carousel} aria-label="GenOffice 카드 10장">
       <p className={styles.instructions} id="genoffice-carousel-instructions">
         좌우로 밀거나 방향키·스페이스키·Home·End 키로 카드를 이동할 수 있습니다.
       </p>
